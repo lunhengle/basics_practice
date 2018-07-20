@@ -1,7 +1,7 @@
-package org.lhl.basics.practice.algorithm.sort;
+package org.lhl.bascis.practice.algorithm.sort;
 
 /**
- * 冒泡排序.
+ * 选择排序算法.
  * <p>
  * |排序方法	    | 时间复杂度（平均） |时间复杂度（最坏)	|时间复杂度（最好)  |空间复杂度	    |稳定性	|复杂性
  * |直接插入排序  |O(n2)	          |O(n2)	        |O(n)	          |O(1)	        |稳定	|简单
@@ -15,24 +15,28 @@ package org.lhl.basics.practice.algorithm.sort;
  *
  * @author lunhengle
  */
-public class BubbleSort {
+public class SelectSort {
     public static void main(String[] args) {
         int[] a = {9, 4, 8, 6, 1, 5, 3, 2, 0, 7};
-        bubbleSort(a);
+        selectSort(a);
         for (int item : a) {
             System.out.println(item);
         }
     }
 
-    private static void bubbleSort(int[] a) {
-        for (int i = 0; i < a.length - 1; i++) {
+    private static void selectSort(int[] a) {
+        for (int i = 0; i < a.length; i++) {
+            int index = i;
+            int temp = a[i];
             for (int j = i + 1; j < a.length; j++) {
-                if (a[i] > a[j]) {
-                    int temp = a[j];
-                    a[j] = a[i];
-                    a[i] = temp;
+                if (temp < a[j]) {
+                    index = j;
+                    temp = a[j];
                 }
             }
+            a[index] = a[i];
+            a[i] = temp;
         }
+
     }
 }

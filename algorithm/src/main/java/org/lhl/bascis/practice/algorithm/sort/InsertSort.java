@@ -1,7 +1,7 @@
-package org.lhl.basics.practice.algorithm.sort;
+package org.lhl.bascis.practice.algorithm.sort;
 
 /**
- * 选择排序算法.
+ * 插入排序.
  * <p>
  * |排序方法	    | 时间复杂度（平均） |时间复杂度（最坏)	|时间复杂度（最好)  |空间复杂度	    |稳定性	|复杂性
  * |直接插入排序  |O(n2)	          |O(n2)	        |O(n)	          |O(1)	        |稳定	|简单
@@ -15,28 +15,25 @@ package org.lhl.basics.practice.algorithm.sort;
  *
  * @author lunhengle
  */
-public class SelectSort {
+public class InsertSort {
     public static void main(String[] args) {
         int[] a = {9, 4, 8, 6, 1, 5, 3, 2, 0, 7};
-        selectSort(a);
+        insertSort(a);
         for (int item : a) {
             System.out.println(item);
         }
     }
 
-    private static void selectSort(int[] a) {
-        for (int i = 0; i < a.length; i++) {
-            int index = i;
+    private static void insertSort(int[] a) {
+        for (int i = 1; i < a.length; i++) {
+            int j;
             int temp = a[i];
-            for (int j = i + 1; j < a.length; j++) {
-                if (temp < a[j]) {
-                    index = j;
-                    temp = a[j];
-                }
+            for (j = i; j > 0 && temp < a[j - 1]; j--) {
+                a[j] = a[j - 1];
             }
-            a[index] = a[i];
-            a[i] = temp;
+            a[j] = temp;
         }
-
     }
+
+
 }

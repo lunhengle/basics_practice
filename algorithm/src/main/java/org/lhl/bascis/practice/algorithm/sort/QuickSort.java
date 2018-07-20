@@ -1,7 +1,7 @@
-package org.lhl.basics.practice.algorithm.sort;
+package org.lhl.bascis.practice.algorithm.sort;
 
 /**
- * 插入排序.
+ * 快速排序.
  * <p>
  * |排序方法	    | 时间复杂度（平均） |时间复杂度（最坏)	|时间复杂度（最好)  |空间复杂度	    |稳定性	|复杂性
  * |直接插入排序  |O(n2)	          |O(n2)	        |O(n)	          |O(1)	        |稳定	|简单
@@ -15,25 +15,41 @@ package org.lhl.basics.practice.algorithm.sort;
  *
  * @author lunhengle
  */
-public class InsertSort {
+public class QuickSort {
     public static void main(String[] args) {
         int[] a = {9, 4, 8, 6, 1, 5, 3, 2, 0, 7};
-        insertSort(a);
+        int left = 0;
+        int right = a.length - 1;
+        quickSort(a, left, right);
         for (int item : a) {
             System.out.println(item);
         }
     }
 
-    private static void insertSort(int[] a) {
-        for (int i = 1; i < a.length; i++) {
-            int j;
-            int temp = a[i];
-            for (j = i; j > 0 && temp < a[j - 1]; j--) {
-                a[j] = a[j - 1];
-            }
-            a[j] = temp;
+    private static void quickSort(int[] a, int left, int right) {
+        if (left > right) {
+            return;
         }
+        int low = left;
+        int high = right;
+        int key = a[left];
+        while (low < high) {
+            while (low < high && key <= a[high]) {
+                high--;
+            }
+            while (low < high && key >= a[low]) {
+                low++;
+            }
+            if (low < high) {
+                int temp = a[low];
+                a[low] = a[high];
+                a[high] = temp;
+            }
+        }
+        a[left] = a[low];
+        a[low] = key;
+        quickSort(a, left, low - 1);
+        quickSort(a, low + 1, right);
+
     }
-
-
 }
