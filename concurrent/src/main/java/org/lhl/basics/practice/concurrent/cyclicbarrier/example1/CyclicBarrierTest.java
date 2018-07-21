@@ -6,6 +6,7 @@ import java.util.concurrent.*;
 
 /**
  * 测试栅栏.
+ * 三人同时参见聚会
  * @author lunhengle
  */
 public class CyclicBarrierTest {
