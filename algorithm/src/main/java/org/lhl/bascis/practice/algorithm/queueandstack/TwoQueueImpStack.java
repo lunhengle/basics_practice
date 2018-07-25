@@ -15,13 +15,9 @@ public class TwoQueueImpStack {
     public void push(Integer item) {
         if (queue1.isEmpty() && queue2.isEmpty()) {
             queue1.add(item);
-            return;
-        }
-        if (queue1.isEmpty()) {
+        } else if (queue1.isEmpty()) {
             queue2.add(item);
-            return;
-        }
-        if (queue2.isEmpty()) {
+        } else if (queue2.isEmpty()) {
             queue1.add(item);
         }
     }
