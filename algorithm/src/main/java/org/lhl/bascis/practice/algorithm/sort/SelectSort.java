@@ -29,7 +29,7 @@ public class SelectSort {
             int index = i;
             int temp = a[i];
             for (int j = i + 1; j < a.length; j++) {
-                if (temp < a[j]) {
+                if (temp > a[j]) {
                     index = j;
                     temp = a[j];
                 }

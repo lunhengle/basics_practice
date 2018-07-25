@@ -50,6 +50,5 @@ public class QuickSort {
         a[low] = key;
         quickSort(a, left, low - 1);
         quickSort(a, low + 1, right);
-
     }
 }
