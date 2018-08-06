@@ -10,6 +10,8 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>concurrent</module>
+        <module>spring</module>
+        <module>basic</module>
     </modules>
     <dependencyManagement>
         <dependencies>
