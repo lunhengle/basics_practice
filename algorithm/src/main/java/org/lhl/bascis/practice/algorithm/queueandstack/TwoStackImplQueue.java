@@ -17,15 +17,18 @@ public class TwoStackImplQueue {
 
     public Integer pop() {
         if (stack2.isEmpty()) {
-            while (stack1.size() > 0) {
+            while (!stack1.isEmpty()) {
                 stack2.push(stack1.pop());
             }
+            if (!stack2.isEmpty()) {
+                return stack2.pop();
+            }
+        } else {
+            return stack2.pop();
         }
-        if(stack2.isEmpty()){
-            return null;
-        }
-        return stack2.pop();
+        return null;
     }
+
 
     public static void main(String[] args) {
         TwoStackImplQueue twoStackImplQueue = new TwoStackImplQueue();
