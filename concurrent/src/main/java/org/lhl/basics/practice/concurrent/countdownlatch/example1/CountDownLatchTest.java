@@ -13,7 +13,7 @@ class CountDownLatchTest {
      */
     public static void main(String[] args) {
         ThreadFactory threadFactory=new ThreadFactoryBuilder().setNameFormat("countDownLatch-pool").build();
-        ExecutorService executor = new ThreadPoolExecutor(5,100,1000,TimeUnit.SECONDS,new ArrayBlockingQueue<Runnable>(1024),threadFactory,new ThreadPoolExecutor.AbortPolicy());
+        ExecutorService executor = new ThreadPoolExecutor(5,100,1000,TimeUnit.SECONDS,new ArrayBlockingQueue<>(1024),threadFactory,new ThreadPoolExecutor.AbortPolicy());
         CountDownLatch countDownLatch = new CountDownLatch(3);
         Worker worker1 = new Worker("老张", countDownLatch);
         Worker worker2 = new Worker("老李", countDownLatch);
