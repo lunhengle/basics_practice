@@ -12,7 +12,7 @@ public class LinkedReverse {
      * @param node 节点
      * @return 反转节点
      */
-    public Node reverse(Node node) {
+    private Node reverse(Node node) {
         if(null==node.getNext()){
             return node;
         }

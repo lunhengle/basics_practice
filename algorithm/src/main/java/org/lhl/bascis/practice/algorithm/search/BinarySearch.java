@@ -16,7 +16,7 @@ public class BinarySearch {
      * @param right 右边界
      * @return 返回位置
      */
-    public static Integer binarySearch(int[] a, int item, int left, int right) {
+    private static Integer binarySearch(int[] a, int item, int left, int right) {
         if (item < a[left] || item > a[right]) {
             return null;
         }
