@@ -40,7 +40,7 @@ public class QuickSort {
             while (low < high && key >= a[low]) {
                 low++;
             }
-            if (low < high) {
+            if (a[low] > a[high]) {
                 int temp = a[low];
                 a[low] = a[high];
                 a[high] = temp;

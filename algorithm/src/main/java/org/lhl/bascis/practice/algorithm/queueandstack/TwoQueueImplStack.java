@@ -12,33 +12,31 @@ public class TwoQueueImplStack {
     private Queue<Integer> queue1 = new ArrayDeque<>();
     private Queue<Integer> queue2 = new ArrayDeque<>();
 
-    public void add(Integer item) {
-        if (queue1.isEmpty() && queue2.isEmpty()) {
+    public void add (Integer item){
+        if(queue1.isEmpty()&&queue2.isEmpty()){
             queue1.add(item);
-        } else if (queue1.isEmpty()) {
+        }else if(queue1.isEmpty()){
             queue2.add(item);
-        } else if (queue2.isEmpty()) {
+        }else{
             queue1.add(item);
         }
     }
 
-    public Integer poll() {
-        if (queue1.isEmpty() && queue2.isEmpty()) {
+    public Integer poll(){
+        if(queue1.isEmpty()&&queue2.isEmpty()){
             return null;
-        } else if (queue1.isEmpty()) {
-            while (queue2.size() > 1) {
+        }else if(queue1.isEmpty()){
+            while (queue2.size()>1){
                 queue1.add(queue2.poll());
             }
             return queue2.poll();
-        } else if (queue2.isEmpty()) {
-            while (queue1.size() > 1) {
+        }else if(queue2.isEmpty()){
+            while (queue1.size()>1){
                 queue2.add(queue1.poll());
             }
             return queue1.poll();
-        } else {
-            return null;
         }
-
+        return null;
     }
 
     public static void main(String[] args) {

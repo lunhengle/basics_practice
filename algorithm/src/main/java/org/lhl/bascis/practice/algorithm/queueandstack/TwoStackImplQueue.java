@@ -11,22 +11,20 @@ public class TwoStackImplQueue {
     private Stack<Integer> stack1 = new Stack<>();
     private Stack<Integer> stack2 = new Stack<>();
 
-    public void push(Integer item) {
+    public void push(Integer item){
         stack1.push(item);
     }
-
-    public Integer pop() {
-        if (stack2.isEmpty()) {
-            while (!stack1.isEmpty()) {
+    public Integer pop(){
+        if(stack1.isEmpty()){
+            return null;
+        }else if(stack2.isEmpty()){
+            while (stack1.size()>0){
                 stack2.push(stack1.pop());
             }
-            if (!stack2.isEmpty()) {
-                return stack2.pop();
-            }
-        } else {
+            return stack2.pop();
+        }else{
             return stack2.pop();
         }
-        return null;
     }
 
 

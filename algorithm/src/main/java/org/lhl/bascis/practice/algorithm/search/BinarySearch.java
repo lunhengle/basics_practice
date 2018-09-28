@@ -24,9 +24,9 @@ public class BinarySearch {
         if (item == a[middle]) {
             return middle;
         } else if (item < a[middle]) {
-            return binarySearch(a, item, left, middle - 1);
-        } else {
-            return binarySearch(a, item, middle + 1, right);
+            return binarySearch(a,item,left,middle-1);
+        }else{
+            return binarySearch(a,item,middle+1,right);
         }
     }
 
