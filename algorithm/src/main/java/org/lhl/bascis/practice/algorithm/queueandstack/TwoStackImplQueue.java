@@ -11,18 +11,19 @@ public class TwoStackImplQueue {
     private Stack<Integer> stack1 = new Stack<>();
     private Stack<Integer> stack2 = new Stack<>();
 
-    public void push(Integer item){
+    public void push(Integer item) {
         stack1.push(item);
     }
-    public Integer pop(){
-        if(stack1.isEmpty()){
+
+    public Integer pop() {
+        if (stack1.isEmpty() && stack2.isEmpty()) {
             return null;
-        }else if(stack2.isEmpty()){
-            while (stack1.size()>0){
+        } else if (stack2.isEmpty()) {
+            while (stack1.size() > 0) {
                 stack2.push(stack1.pop());
             }
             return stack2.pop();
-        }else{
+        } else {
             return stack2.pop();
         }
     }
@@ -35,8 +36,8 @@ public class TwoStackImplQueue {
         twoStackImplQueue.push(3);
         twoStackImplQueue.push(4);
         System.out.println(twoStackImplQueue.pop());
-        twoStackImplQueue.push(5);
         System.out.println(twoStackImplQueue.pop());
+        twoStackImplQueue.push(5);
         System.out.println(twoStackImplQueue.pop());
         System.out.println(twoStackImplQueue.pop());
         System.out.println(twoStackImplQueue.pop());
