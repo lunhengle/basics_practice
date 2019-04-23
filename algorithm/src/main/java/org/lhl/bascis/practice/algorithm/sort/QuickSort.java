@@ -30,6 +30,12 @@ public class QuickSort {
         if (left > right) {
             return;
         }
+        int low = sort(a, left, right);
+        quickSort(a, left, low - 1);
+        quickSort(a, low + 1, right);
+    }
+
+    private static int sort(int a[], int left, int right) {
         int low = left;
         int high = right;
         int key = a[left];
@@ -48,7 +54,6 @@ public class QuickSort {
         }
         a[left] = a[low];
         a[low] = key;
-        quickSort(a, left, low - 1);
-        quickSort(a, low + 1, right);
+        return low;
     }
 }
