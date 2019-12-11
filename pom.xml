@@ -12,6 +12,7 @@
         <module>concurrent</module>
         <module>spring</module>
         <module>basic</module>
+        <module>util</module>
     </modules>
     <dependencyManagement>
         <dependencies>

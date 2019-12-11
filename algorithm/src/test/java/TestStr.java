@@ -834,11 +834,19 @@ public class TestStr {
     private static final Map<String, String> map1 = new HashMap<>();
 
     public static void main(String[] args) {
-        String[] arr = str.split(",");
-        String[] arr1 = menu.split(",");
-        String[] arr2 = href.split(",");
-        for (int i = 0; i < arr1.length; i++) {
-            map.put(arr2[i], arr1[i]);
+       System.out.println(isPalindrome(121));
+    }
+
+    public static boolean isPalindrome(int x) {
+        if(x==0){
+            return true;
         }
+        String result="";
+        while(x!=0){
+            result+=String.valueOf(x%10);
+            x=x/10;
+        }
+        System.out.println(result);
+        return result.equals(String.valueOf(121));
     }
 }
