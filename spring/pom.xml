@@ -11,7 +11,7 @@
 
     <artifactId>spring</artifactId>
     <properties>
-        <spring.verion>5.0.8.RELEASE</spring.verion>
+        <spring.verion>5.3.19</spring.verion>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <dependencies>
